@@ -1,19 +1,15 @@
 import React, { JSX } from "react";
-import { Coordinate } from "../types/types";
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
-function getRandomFruitEmoji() {
-  const fruitsEmojis = ["🍎", "🍊", "🍋", "🍇", "🍓", "🍆", "🥑"];
-  const randomIndex = Math.floor(Math.random() * fruitsEmojis.length);
-  fruitsEmojis[Math.floor(Math.random() * fruitsEmojis.length)];
-  return fruitsEmojis[randomIndex];
+interface FoodProps {
+  x: number;
+  y: number;
+  emoji: string;
 }
 
-export default function Food({ x, y }: Coordinate): JSX.Element {
+export default function Food({ x, y, emoji }: FoodProps): JSX.Element {
   return (
-    <Text style={[{ top: y * 10, left: x * 10 }, styles.food]}>
-      {getRandomFruitEmoji()}
-    </Text>
+    <Text style={[{ top: y * 10, left: x * 10 }, styles.food]}>{emoji}</Text>
   );
 }
 
