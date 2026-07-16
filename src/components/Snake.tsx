@@ -3,10 +3,13 @@ import { Coordinate } from "../types/types";
 import { StyleSheet, View } from "react-native";
 import { Colors } from "../style/colors";
 
+/*componente de snake 
+este componente resive como parametro el arreglo de coordenadas que actualizan su posicion actual
+*/
 interface SnakeProps {
   snake: Coordinate[];
 }
-
+// -- Pendiente a investigar
 export default function Snake({ snake }: SnakeProps): JSX.Element {
   return (
     <Fragment>

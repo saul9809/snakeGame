@@ -12,18 +12,21 @@ import { checkEatsFood } from "../utils/checkEatsFood";
 import { randomFoodPosition } from "../utils/randomFoodPosition";
 import Header from "./Header";
 
+// -- Constantes inicializadas
 const SNAKE_INITIAL_POSITION = [{ x: 10, y: 10 }];
 const FOOD_INITIAL_POSITION = { x: 20, y: 20 };
-const GAME_BOUNDS = { xMin: 0, xMax: 42, yMin: 0, yMax: 70 };
+const GAME_BOUNDS = { xMin: 0, xMax: 35, yMin: 0, yMax: 75 };
 const MOVE_INTERVAL = 50;
 const SCORE_INCREMENT = 10;
 
+// -- Método fruta random
 const getRandomFruitEmoji = (): string => {
   const fruits = ["🍎", "🍊", "🍋", "🍇", "🍓", "🍆", "🥑"];
   return fruits[Math.floor(Math.random() * fruits.length)];
 };
 
 export default function Game(): JSX.Element {
+  // -- Variables principales de estado
   const [direction, setDirection] = React.useState<Direction>(Direction.Right);
   const [snake, setSnake] = React.useState<Coordinate[]>(
     SNAKE_INITIAL_POSITION,
